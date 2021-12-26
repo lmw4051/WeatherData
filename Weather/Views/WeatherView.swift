@@ -14,23 +14,13 @@ struct WeatherView: View {
     ZStack(alignment: .leading) {
       VStack {
         PlaceAndTimeView(weather: weather)
-        
         Spacer()
         
         VStack {
           WeatherDataView(weather: weather)
-          
           Spacer()
             .frame(height: 80)
-          
-          AsyncImage(url: URL(string: "https://cdn.pixabay.com/photo/2020/01/24/21/33/city-4791269_1280.png")) { image in
-            image
-              .resizable()
-              .aspectRatio(contentMode: .fit)
-          } placeholder: {
-            ProgressView()
-          }
-          
+          CityImageView()
           Spacer()
         }
         .frame(maxWidth: .infinity)
@@ -38,33 +28,7 @@ struct WeatherView: View {
       .padding()
       .frame(maxWidth: .infinity, alignment: .leading)
       
-      VStack {
-        Spacer()
-        
-        VStack(alignment: .leading, spacing: 20) {
-          Text("Weather now")
-            .bold()
-            .padding(.bottom)
-          
-          HStack {
-            WeatherRow(logo: "thermometer", name: "Min temp", value: (weather.main.tempMin.roundDouble() + "°"))
-            Spacer()
-            WeatherRow(logo: "thermometer", name: "Max temp", value: (weather.main.tempMax.roundDouble() + "°"))
-          }
-          
-          HStack {
-            WeatherRow(logo: "wind", name: "Wind speed", value: (weather.wind.speed.roundDouble() + " m/s"))
-            Spacer()
-            WeatherRow(logo: "humidity", name: "Humidity", value: "\(weather.main.humidity.roundDouble())%")
-          }
-        }
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .padding()
-        .padding(.bottom, 20)
-        .foregroundColor(Color(hue: 0.656, saturation: 0.787, brightness: 0.354))
-        .background(.white)
-        .cornerRadius(20, corners: [.topLeft, .topRight])
-      }
+      WeatherDetailsView(weather: weather)
     }
     .edgesIgnoringSafeArea(.bottom)
     .background(Color(hue: 0.656, saturation: 0.787, brightness: 0.354))
@@ -117,6 +81,18 @@ struct WeatherDataView: View {
   }
 }
 
+struct CityImageView: View {
+  var body: some View {
+    AsyncImage(url: URL(string: "https://cdn.pixabay.com/photo/2020/01/24/21/33/city-4791269_1280.png")) { image in
+      image
+        .resizable()
+        .aspectRatio(contentMode: .fit)
+    } placeholder: {
+      ProgressView()
+    }
+  }
+}
+
 struct WeatherRow: View {
   var logo: String
   var name: String
@@ -140,6 +116,40 @@ struct WeatherRow: View {
           .bold()
           .font(.title)
       }
+    }
+  }
+}
+
+struct WeatherDetailsView: View {
+  var weather: ResponseBody
+
+  var body: some View {
+    VStack {
+      Spacer()
+      
+      VStack(alignment: .leading, spacing: 20) {
+        Text("Weather now")
+          .bold()
+          .padding(.bottom)
+        
+        HStack {
+          WeatherRow(logo: "thermometer", name: "Min temp", value: (weather.main.tempMin.roundDouble() + "°"))
+          Spacer()
+          WeatherRow(logo: "thermometer", name: "Max temp", value: (weather.main.tempMax.roundDouble() + "°"))
+        }
+        
+        HStack {
+          WeatherRow(logo: "wind", name: "Wind speed", value: (weather.wind.speed.roundDouble() + " m/s"))
+          Spacer()
+          WeatherRow(logo: "humidity", name: "Humidity", value: "\(weather.main.humidity.roundDouble())%")
+        }
+      }
+      .frame(maxWidth: .infinity, alignment: .leading)
+      .padding()
+      .padding(.bottom, 20)
+      .foregroundColor(Color(hue: 0.656, saturation: 0.787, brightness: 0.354))
+      .background(.white)
+      .cornerRadius(20, corners: [.topLeft, .topRight])
     }
   }
 }
