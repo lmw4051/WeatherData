@@ -7,9 +7,20 @@
 
 import SwiftUI
 
-struct ContentView: View {  
+struct ContentView: View {
+  @StateObject var locationManager = LocationManager()
+  
   var body: some View {
-    Text("Hello World")
+    if let location = locationManager.location {
+      Text("Your coordinates are: \(location.longitude), \(location.latitude)")
+    } else {
+      if locationManager.isLoading {
+        ProgressView()
+      } else {
+        WelcomeView()
+          .environmentObject(locationManager)
+      }
+    }
   }
 }
 
