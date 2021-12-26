@@ -16,6 +16,7 @@
 		54D76B402778AD0600FC4FF9 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D76B3F2778AD0600FC4FF9 /* LoadingView.swift */; };
 		54D76B422778ADDD00FC4FF9 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D76B412778ADDD00FC4FF9 /* WeatherManager.swift */; };
 		54D76B452778B0B200FC4FF9 /* ResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D76B442778B0B200FC4FF9 /* ResponseBody.swift */; };
+		54D76B4A2778B6B400FC4FF9 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D76B492778B6B400FC4FF9 /* ModelData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		54D76B412778ADDD00FC4FF9 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 		54D76B442778B0B200FC4FF9 /* ResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseBody.swift; sourceTree = "<group>"; };
 		54D76B482778B64600FC4FF9 /* GET_Weather_ValidResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GET_Weather_ValidResponse.json; sourceTree = "<group>"; };
+		54D76B492778B6B400FC4FF9 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 		54D76B2C2778905000FC4FF9 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				54D76B492778B6B400FC4FF9 /* ModelData.swift */,
 				54D76B482778B64600FC4FF9 /* GET_Weather_ValidResponse.json */,
 				54D76B2D2778905000FC4FF9 /* Preview Assets.xcassets */,
 			);
@@ -183,6 +186,7 @@
 				54D76B292778904F00FC4FF9 /* ContentView.swift in Sources */,
 				54D76B272778904F00FC4FF9 /* WeatherApp.swift in Sources */,
 				54D76B362778A44600FC4FF9 /* LocationManager.swift in Sources */,
+				54D76B4A2778B6B400FC4FF9 /* ModelData.swift in Sources */,
 				54D76B402778AD0600FC4FF9 /* LoadingView.swift in Sources */,
 				54D76B3E2778AC7D00FC4FF9 /* WelcomeView.swift in Sources */,
 			);
