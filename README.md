@@ -11,8 +11,8 @@ Using Async/Await for async
 - Please run on actual device, otherwise the app can not get your current location 
 
 **Result**
-ScreenShot
+- ScreenShot
 ![Image Link](https://github.com/lmw4051/WeatherData/blob/main/IMG_9268.PNG)
 
-Video
+- Video
 ![image](https://github.com/lmw4051/WeatherData/blob/main/VKDA9003.gif)
