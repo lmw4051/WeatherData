@@ -29,6 +29,7 @@
 		54D76B3F2778AD0600FC4FF9 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		54D76B412778ADDD00FC4FF9 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 		54D76B442778B0B200FC4FF9 /* ResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseBody.swift; sourceTree = "<group>"; };
+		54D76B482778B64600FC4FF9 /* GET_Weather_ValidResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GET_Weather_ValidResponse.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +75,7 @@
 		54D76B2C2778905000FC4FF9 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				54D76B482778B64600FC4FF9 /* GET_Weather_ValidResponse.json */,
 				54D76B2D2778905000FC4FF9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
