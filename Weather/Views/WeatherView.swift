@@ -26,18 +26,35 @@ struct WeatherView: View {
         Spacer()
         
         VStack {
-          VStack(spacing: 20) {
-            Image(systemName: "sun.max")
-              .font(.system(size: 40))
-            Text(weather.weather[0].main)
+          HStack {
+            VStack(spacing: 20) {
+              Image(systemName: "sun.max")
+                .font(.system(size: 40))
+              Text(weather.weather[0].main)
+            }
+            .frame(width: 150, alignment: .leading)
+            
+            Spacer()
+            
+            Text(weather.main.feelsLike
+                  .roundDouble() + "°")
+              .font(.system(size: 100))
+              .fontWeight(.bold)
+              .padding()
           }
-          .frame(width: 150, alignment: .leading)
+            
+          Spacer()
+            .frame(height: 80)
           
-          Text(weather.main.feelsLike
-                .roundDouble() + "°")
-            .font(.system(size: 100))
-            .fontWeight(.bold)
-            .padding()
+          AsyncImage(url: URL(string: "https://cdn.pixabay.com/photo/2020/01/24/21/33/city-4791269_1280.png")) { image in
+            image
+              .resizable()
+              .aspectRatio(contentMode: .fit)
+          } placeholder: {
+            ProgressView()
+          }
+          
+          Spacer()
         }
         .frame(maxWidth: .infinity)
       }
