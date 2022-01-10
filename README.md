@@ -2,6 +2,7 @@
 - macOS Big Sur 11.5.2
 - Xcode 13.1
 - SwiftUI 2
+- Combine
 - Deployment Target 15.0
 
 Using Async/Await for async
